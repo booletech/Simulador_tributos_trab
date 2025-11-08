@@ -798,7 +798,7 @@ A adoção do **Vite** em vez do Create React App foi um diferencial importante.
 - [ ] Multi-tenancy (múltiplas empresas)
 - [ ] Integração com sistemas de folha de pagamento
 - [ ] App mobile com React Native
-- [ ] IA para sugestões de otimização tributária
+- [ ] Sistema de recomendações para otimização tributária
 - [ ] Relatórios personalizáveis
 
 ---
