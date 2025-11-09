@@ -35,6 +35,32 @@ Ver `AUTENTICACAO.md` para mais detalhes sobre autenticação.
 
 Se necessário, crie `.env.local` com `VITE_API_URL` para integrar com backend.
 
+## 📸 Screenshots
+
+### Tela Inicial (Dashboard)
+![Home Dashboard](./docs/screenshots/01-home.png)
+
+### Tela Inicial Vazia
+![Home Vazia](./docs/screenshots/01-homevazia.png)
+
+### Página de Login
+![Login](./docs/screenshots/02-login.png)
+
+### Resultado do Cálculo
+![Resultado](./docs/screenshots/04-resultado-calculo.png)
+
+### Lista de Contratos
+![Contratos](./docs/screenshots/05-contratos-lista.png)
+
+### Novo Contrato
+![Novo Contrato](./docs/screenshots/06-novo-contrato.png)
+
+### Detalhes do Contrato
+![Detalhes](./docs/screenshots/07-detalhes-contrato.png)
+
+### Área Administrativa (Rota Privada)
+![Admin](./docs/screenshots/08-admin.png)
+
 ## Useful commands
 
 ```powershell
