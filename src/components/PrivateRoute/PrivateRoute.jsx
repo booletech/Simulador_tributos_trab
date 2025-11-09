@@ -10,9 +10,13 @@ import { useAuth } from '../../context/AuthContext'
  * @returns {React.ReactNode}
  */
 const PrivateRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth()
-  
-  return isAuthenticated ? children : <Navigate to="/login" replace />
+  try {
+    const { isAuthenticated } = useAuth()
+    return isAuthenticated ? children : <Navigate to="/login" replace />
+  } catch (error) {
+    console.error('Erro no PrivateRoute:', error)
+    return <Navigate to="/login" replace />
+  }
 }
 
 export default PrivateRoute

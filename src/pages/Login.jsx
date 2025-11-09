@@ -78,10 +78,16 @@ const Login = () => {
               Acesse a área administrativa do sistema
             </Typography>
 
-            {/* Informação de demonstração */}
+            {/* Informação de credenciais válidas */}
             <Alert severity="info" sx={{ mb: 3 }}>
               <Typography variant="body2">
-                <strong>Modo Demonstração:</strong> Use qualquer email e senha para entrar.
+                <strong>Credenciais válidas:</strong>
+              </Typography>
+              <Typography variant="body2" sx={{ mt: 1 }}>
+                • Admin: admin@sistema.com / admin123
+              </Typography>
+              <Typography variant="body2">
+                • Usuário: usuario@sistema.com / user123
               </Typography>
             </Alert>
 

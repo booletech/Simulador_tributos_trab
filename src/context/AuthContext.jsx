@@ -21,12 +21,22 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   // Inicializar estado a partir do localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    return Boolean(localStorage.getItem('token'))
+    try {
+      return Boolean(localStorage.getItem('token'))
+    } catch (error) {
+      console.error('Erro ao acessar localStorage:', error)
+      return false
+    }
   })
 
   const [user, setUser] = useState(() => {
-    const userData = localStorage.getItem('user')
-    return userData ? JSON.parse(userData) : null
+    try {
+      const userData = localStorage.getItem('user')
+      return userData ? JSON.parse(userData) : null
+    } catch (error) {
+      console.error('Erro ao carregar dados do usuário:', error)
+      return null
+    }
   })
 
   /**
@@ -51,14 +61,27 @@ export const AuthProvider = ({ children }) => {
       // Simular delay de rede
       await new Promise(resolve => setTimeout(resolve, 500))
 
-      // Mock: aceitar qualquer credencial para demonstração
-      // Em produção, validar com backend
+      // Validar credenciais fixas
+      const USUARIOS_VALIDOS = {
+        'admin@sistema.com': { senha: 'admin123', nome: 'Administrador', role: 'admin' },
+        'usuario@sistema.com': { senha: 'user123', nome: 'Usuário', role: 'user' },
+      }
+
+      const usuario = USUARIOS_VALIDOS[email]
+
+      if (!usuario || usuario.senha !== password) {
+        return {
+          sucesso: false,
+          erro: 'Email ou senha inválidos',
+        }
+      }
+
       const mockToken = `token_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
       const mockUser = {
-        id: '1',
-        nome: 'Usuário Demo',
+        id: Date.now().toString(),
+        nome: usuario.nome,
         email,
-        role: 'admin',
+        role: usuario.role,
       }
 
       // Salvar no localStorage

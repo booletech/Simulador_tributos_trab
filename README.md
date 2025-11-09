@@ -25,6 +25,14 @@ npm run dev
 
 Abra http://localhost:3000 no navegador.
 
+4. **Credenciais de acesso:**
+
+Para acessar áreas protegidas (ex: `/admin`):
+- **Admin:** admin@sistema.com / admin123
+- **Usuário:** usuario@sistema.com / user123
+
+Ver `AUTENTICACAO.md` para mais detalhes sobre autenticação.
+
 Se necessário, crie `.env.local` com `VITE_API_URL` para integrar com backend.
 
 ## Useful commands
@@ -38,17 +46,20 @@ npm run lint      # run linter
 
 ## What is included
 
+- **Authentication system:** Login with fixed credentials, protected private routes
 - Tax calculators: INSS, IRRF, ISS (business rules in `src/utils/tributosCalculos.js`)
 - CRUD for contracts (persisted to `localStorage`)
-- React Context state in `src/context/TributosContext.jsx`
-- Custom hooks: `useForm`, `useDebounce`, `useTributos`
+- React Context state in `src/context/TributosContext.jsx` and `src/context/AuthContext.jsx`
+- Custom hooks: `useForm`, `useDebounce`, `useTributos`, `useAuth`
 - Material-UI-based theme in `src/theme.js`
 
 ## Where to look next
 
+- `AUTENTICACAO.md` — authentication guide with credentials and configuration
 - `PERFORMANCE.md` — consolidated performance & optimization guide
 - `CONTRIBUTING.md` — development and contribution guidelines
 - `GUIA_RAPIDO.md` — short user-facing quick guide (how to use the app)
+- `docs/COMPLIANCE_REPORT.md` — 100% compliance report with academic requirements
 - `PERFORMANCE.md` and `CONTRIBUTING.md` were added to reduce duplication; full academic artifacts are in the `docs/` folder.
 
 ## Project structure (short)

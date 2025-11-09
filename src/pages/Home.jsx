@@ -24,7 +24,7 @@ import { formatarMoeda } from '../utils/tributosCalculos'
  */
 const Home = () => {
   const navigate = useNavigate()
-  const { obterEstatisticas, contratos } = useTributos()
+  const { obterEstatisticas } = useTributos()
 
   // Obter estatísticas usando hook personalizado
   const estatisticas = obterEstatisticas()
